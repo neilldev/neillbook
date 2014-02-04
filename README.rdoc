@@ -25,6 +25,8 @@ Things you may want to cover:
 Adding to this read me to test my commits,
 Ruby ver 1.9.3 p484
 
+Testing out new notepad connect for commit
+
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
