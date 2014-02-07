@@ -1,17 +1,15 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Creating a social network App as a Project to learn rails.
+         
 
-Things you may want to cover:           
+* Ruby version 1.9.3 p484
 
-* Ruby version
+* System dependencies tba
 
-* System dependencies
+* Configuration tba
 
-* Configuration
-
-* Database creation
+* Database creation 
 
 * Database initialization
 
@@ -23,10 +21,10 @@ Things you may want to cover:
 
 * ...
 Adding to this read me to test my commits,
-Ruby ver 1.9.3 p484
+
 
 Testing out new notepad connect for commit
 
 
-Please feel free to use a different markup language if you do not plan to run
+--default comment--Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
