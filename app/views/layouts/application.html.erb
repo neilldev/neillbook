@@ -52,12 +52,14 @@
      </nav>
    </div>
 
+
     <div class="row">
       <div class="large-2 columns">&nbsp</div>
       <div class="large-8 columns">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <%= yield %>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
       </div>
       <div class="large-2 columns">&nbsp</div>  
     </div>
