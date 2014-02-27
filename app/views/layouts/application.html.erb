@@ -58,14 +58,22 @@
    </div>
 
     <div class="row">
-      <div class="large-2 columns">&nbsp</div>
+     <div class="large-2 columns">&nbsp</div>
       <div class="large-8 columns">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>        
-      </div>
 
-      <div class="large-2 columns">&nbsp</div>  
+         <div class="container">
+          <% flash.each do |type, message| %>
+             <div data-alert class="alert-box <%= flash_class type %>">
+              <%= message %>
+              <a href="#" class="close">&times;</a>              
+            </div>
+          <% end %>
+
+          <%= yield %>
+         </div>  
+
+      </div>
+     <div class="large-2 columns">&nbsp</div>  
     </div>
     
     <%= javascript_include_tag "application" %>
