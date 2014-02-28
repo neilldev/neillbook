@@ -6,15 +6,22 @@
 
 <% @statuses.each do |status| %>
   <div class="status">
-    <strong><%= status.user.full_name %></strong>
-    <p><%= status.content %></p>
+    <div class="row">
+        <div class="large-1 columns">
+            <%= image_tag status.user.gravatar_url %>
+        </div>
+        <div class="large-10 large-offset-1 columns">
+            <strong><%= status.user.full_name %></strong>
+            <p><%= status.content %></p>
 
-    <div class="meta">
-    <%= link_to time_ago_in_words(status.created_at) + " ago", status, class: "tiny button success radius" %>
-    <span class="admin">
-    <%= link_to 'Edit', edit_status_path(status), class: "tiny button secondary radius"%>
-    <%= link_to 'Delete', status, method: :delete, data: { confirm: 'Are you sure?' }, class: "tiny button secondary radius" %>
-    </span>
+            <div class="meta">
+            <%= link_to time_ago_in_words(status.created_at) + " ago", status, class: "tiny button success radius" %>
+            <span class="admin">
+            <%= link_to 'Edit', edit_status_path(status), class: "tiny button secondary radius"%>
+            <%= link_to 'Delete', status, method: :delete, data: { confirm: 'Are you sure?' }, class: "tiny button secondary radius" %>
+            </span>
+            </div>
+        </div>
     </div>
   </div>
 <% end %>
