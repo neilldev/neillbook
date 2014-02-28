@@ -13,8 +13,7 @@ class CustomRoutesTest < ActionDispatch::IntegrationTest
 
     test "the feed link opens the status index page" do
  		get '/feed'
-        assert_response :redirect
-        assert_redirected_to '/users/sign_in'
+        assert_response :success        
     end
 
     test "the update link opens the new status page" do
@@ -27,5 +26,10 @@ class CustomRoutesTest < ActionDispatch::IntegrationTest
  		get '/logout'
         assert_response :redirect
         assert_redirected_to '/'
+    end
+
+    test "can render profile page" do
+        get '/Jedi'
+        assert_response :success
     end
 end

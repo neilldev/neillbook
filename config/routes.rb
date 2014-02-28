@@ -1,5 +1,5 @@
-Neillbook::Application.routes.draw do
-  get "profiles/show"
+Neillbook::Application.routes.draw do  
+  get 'profiles/show'
   devise_for :users 
 
   devise_scope :user do
@@ -11,7 +11,10 @@ Neillbook::Application.routes.draw do
   resources :statuses
   get 'feed', to: 'statuses#index', as: :feed
   get 'update', to: 'statuses#new', as: :update
+#get 'My updates', to: "profiles/show", as: :profile
   root :to => "statuses#index"
+
+  get '/:id', to: 'profiles#show'
   
   # A logout link not as a get rqst = more secure 
   # <%= log_out, destroy_user_session_path, method: :delete, data: "Are you sure?" %>

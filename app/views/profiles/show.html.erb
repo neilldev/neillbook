@@ -1,2 +1,13 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class="profile header">
+	<h1><%= @user.profileName %></h1>
+</div>
+
+<% if @statuses %>
+	<% @statuses.each do |status| %>
+		<div class="panel radius">
+			<%= status.content %>
+			<%= link_to time_ago_in_words(status.created_at) + " ago", status_path(status), class: "tiny button success radius" %>
+		</div>
+	<% end %>
+<% end %>
+

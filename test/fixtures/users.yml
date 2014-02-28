@@ -16,3 +16,11 @@ test:
   email: "testing@email.com"
 #password: "password"
 #password_confirmation: "password"
+jedi:
+  firstName: "Luke"
+  lastName: "Skywalker"
+  profileName: "Jedi"
+  email: "jedi@email.com"
+#password: "password"
+#password_confirmation: "password"
+
