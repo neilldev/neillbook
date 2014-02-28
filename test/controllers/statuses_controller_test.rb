@@ -33,9 +33,8 @@ class StatusesControllerTest < ActionController::TestCase
     sign_in users(:test)
 
     assert_difference('Status.count') do
-      post :create, status: { content: @status.content }
+      post :create, status: { content: @status.content, user_id: 1, }
     end
-
     assert_redirected_to status_path(assigns(:status))
   end
 #/////////////////New status END/////////////////////////////////////
