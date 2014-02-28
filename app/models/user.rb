@@ -21,3 +21,4 @@ class User < ActiveRecord::Base
   end
 end
 #/a-zA-Z0-9_-/
+#\A[a-zA-Z\-\_]+\Z
