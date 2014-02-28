@@ -9,7 +9,7 @@ Neillbook::Application.routes.draw do
 
   resources :statuses
   get 'feed', to: 'statuses#index', as: :feed
-  get 'Update', to: 'statuses#new', as: :update
+  get 'update', to: 'statuses#new', as: :update
   root :to => "statuses#index"
   
   # A logout link not as a get rqst = more secure 
