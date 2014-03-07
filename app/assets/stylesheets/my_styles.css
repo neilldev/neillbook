@@ -8,7 +8,13 @@ h2 {
 	margin-right: 13px;
 }
 .button:hover {
-	background-color: #220080;	
+	background-color: #220080;
+	border: 1px solid #220056;	
+}
+
+.button:active {
+	background-color: #220080;
+	border: 1px solid #220056;	
 }
 
 .alert-box {
