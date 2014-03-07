@@ -1,17 +1,27 @@
 <h2>Sign in</h2>
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label "Profile name" %><br />
-  <%= f.text_field :profileName, :autofocus => true %></div>
+<div class="row">
+  <div class="large-6 columns">
+  	<%= f.input :profileName, label: 'Profile name', :autofocus => true %>
 
-  <div><%= f.label "Passowrd" %><br />
-  <%= f.password_field :password %></div>
+  	<%= f.input :password, label: 'Password' %>
+  </div>
+</div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.input :remember_me, as: :boolean%>
-  <% end %>
+<div class ="row">
+	<div class="large-8 columns">
+     <% if devise_mapping.rememberable? -%>
+      <div id="radio"><%= f.input :remember_me, as: :boolean%></div>
+     <% end %>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+     <div id="submit"><%= f.submit "Sign in", :class => 'button' %>
+    	<%= render "devise/shared/links" %>
+     </div>
+  
+    <% end %>
+  </div>
+</div>
 
-<%= render "devise/shared/links" %>
+
+

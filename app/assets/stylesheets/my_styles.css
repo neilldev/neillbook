@@ -1,0 +1,22 @@
+h2 {
+	color: #220056;
+}
+
+.button {
+	background-color: #220056;	
+	border: 1px solid #220056;
+	margin-right: 13px;
+}
+.button:hover {
+	background-color: #220080;	
+}
+
+.alert-box {
+	background-color: #220056;
+	border: 1px solid #220056;
+}
+
+.alert-box.success {
+	background-color: #220056;
+	border: 1px solid #220056;
+}

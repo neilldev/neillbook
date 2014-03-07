@@ -22,11 +22,11 @@ class CustomRoutesTest < ActionDispatch::IntegrationTest
         assert_redirected_to '/users/sign_in'
     end
 
-    test "the logout link logs us out" do
- 		get '/logout'
-        assert_response :redirect
-        assert_redirected_to '/'
-    end
+#    test "the logout link logs us out" do
+# 		get '/logout'
+#        assert_response :redirect
+#        assert_redirected_to '/'
+#    end
 
     test "can render profile page" do
         get '/Jedi'

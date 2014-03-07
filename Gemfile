@@ -19,6 +19,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+# maybe upgrade to this version but google for poss heroku impact  '5.0.3.1'
 gem 'zurb-foundation'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -6,75 +6,77 @@
 <!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
-  	<meta charset="utf-8" />
+    <meta charset="utf-8" />
 
-  	<!-- Uncomment to make IE8 render like IE7 -->
-  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+    <!-- Uncomment to make IE8 render like IE7 -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
-  	<!-- Set the viewport width to device width for mobile -->
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-  	<%= stylesheet_link_tag    "application" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-   <div class="contain-to-grid"> 
-     <nav class="top-bar" data-topbar>
-       <ul class="title-area">
-         <li class="name">
-            <h1><%= link_to "Neillbook", feed_path %></h1>
-         </li>
-       </ul>
+<!--topbar & nav-->
+  <div class="contain-to-grid"> 
+  <nav class="top-bar" data-topbar>
+   <ul class="title-area">
+     <li class="name">
+        <h1><%= link_to "Blanchiebook", feed_path %></h1>
+     </li>
+     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+   </ul>
 
-       <section class="top-bar-section">
-        <ul class="right">
+   <section class="top-bar-section">
+    <ul class="right">
+      <li class="divider"></li>
+       <li class="active"><%= link_to "Friends", statuses_path %></li>
+        <li class="divider"></li>
+         <li class="active"><%= link_to "Messages", statuses_path %></li>
           <li class="divider"></li>
-           <li class="active"><%= link_to "Friends", statuses_path %></a></li>
+           <li class="active"><%= link_to "Status Updates", feed_path %></li>
             <li class="divider"></li>
-             <li class="active"><%= link_to "Messages", statuses_path %></li>
-              <li class="divider"></li>
-               <li class="active"><%= link_to "Status Updates", feed_path %></li>
-                <li class="divider"></li>
-                 <li class="has-dropdown">
-                    <a href="#">Notifications</a>
-                    <ul class="dropdown">
-                      <% if user_signed_in? %>
-                      <li class="active"><%= link_to current_user.full_name + " account", update_path %></li>
-                      <li class="active"><%= link_to "My updates", new_status_path %></li>
-                      <li class="active"><%= link_to "Log out", logout_path %></li>
-                      <% else %>
-                      <li class="active"><%= link_to "Register", register_path %></li>
-                      <li class="active"><%= link_to "Log in", login_path %></li>
-                      <% end %>
-                    </ul> 
-                 </li>
+             <li class="has-dropdown">
+                <a href="#">Notifications</a>
+                <ul class="dropdown">
+                  <% if user_signed_in? %>
+                  <li class="active"><%= link_to current_user.full_name + " account", update_path %></li>
+                  <li class="active"><%= link_to "My updates", new_status_path %></li>
+                  <li class="active"><%= link_to "Log out", destroy_user_session_path, method: :delete, data: "Are you sure?" %></li>
+                  <% else %>
+                  <li class="active"><%= link_to "Register", register_path %></li>
+                  <li class="active"><%= link_to "Log in", login_path %></li>
+                  <% end %>
+                </ul> 
+             </li>
 
-        </ul>
-     </nav>
-   </div>
+    </ul>
+  </nav>
+  </div>
+<!--topbar & nav end-->
 
-    <div class="row">
-     <div class="large-2 columns">&nbsp</div>
-      <div class="large-8 columns">
-
-         <div class="container">
-          <% flash.each do |type, message| %>
-             <div data-alert class="alert-box <%= flash_class type %>">
-              <%= message %>
-              <a href="#" class="close">&times;</a>              
-            </div>
-          <% end %>
-
-          <%= yield %>
-         </div>  
-
+<!--Main content news feed-->
+  <div class="row">  
+  <div class="large-8 large-centered columns">
+    <div class="container">
+      <% flash.each do |type, message| %>
+      <div data-alert class="alert-box <%= flash_class type %>">
+      <%= message %>
+      <a href="#" class="close">&times;</a>              
       </div>
-     <div class="large-2 columns">&nbsp</div>  
+      <% end %>
+      
+      <%= yield %>
+
     </div>
+  </div>  
+  </div>
+<!--Main content news feed end-->
     
     <%= javascript_include_tag "application" %>
   </body>

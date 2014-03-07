@@ -12,6 +12,7 @@
  *= require foundation_and_overrides
  *= require_tree .
  */
+
 .alert-box {
 	margin-top: 10px;
 }
